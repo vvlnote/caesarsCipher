@@ -1,15 +1,21 @@
 function rot13(str) { // LBH QVQ VG!
+  if (typeof process.argv[2] !== "undefined"){
+    str = process.argv[2];
+  }
+  console.log("encoded str = " + str);
   var baseStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var decodedStr = "";
   var baseStrLength = baseStr.length;
   var shiftCipher = 13;
+
+
   for (var i = 0; i < str.length; i++)
   {
       var pos = baseStr.indexOf(str[i]);
       if (pos === -1){
-          console.log(str[i]);
+          //console.log(str[i]);
           decodedStr += str[i];
-          console.log(decodedStr);
+          //console.log(decodedStr);
       }
       else{//this is a char in the baseStr
         pos += shiftCipher;
@@ -18,10 +24,11 @@ function rot13(str) { // LBH QVQ VG!
             pos -= baseStrLength;
         }
         decodedStr += baseStr.charAt(pos);
-        console.log(decodedStr);
+        //console.log(decodedStr);
       }
   }
-    
+  
+  console.log("decoded Str = " + decodedStr);  
   return decodedStr;
 }
 
