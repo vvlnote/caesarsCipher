@@ -13,9 +13,7 @@ function rot13(str) { // LBH QVQ VG!
   {
       var pos = baseStr.indexOf(str[i]);
       if (pos === -1){
-          //console.log(str[i]);
           decodedStr += str[i];
-          //console.log(decodedStr);
       }
       else{//this is a char in the baseStr
         pos += shiftCipher;
@@ -24,7 +22,6 @@ function rot13(str) { // LBH QVQ VG!
             pos -= baseStrLength;
         }
         decodedStr += baseStr.charAt(pos);
-        //console.log(decodedStr);
       }
   }
   
